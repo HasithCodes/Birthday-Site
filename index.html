@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Celebration Experience</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <canvas id="webgl-canvas"></canvas>
+
+  <nav>
+    <button id="nav-home" class="active" onclick="navigateTo('page-home')">Wish Card</button>
+    <button id="nav-gallery" onclick="navigateTo('page-gallery')">Memories</button>
+    <button id="nav-cake" onclick="navigateTo('page-cake')">Make a Wish</button>
+  </nav>
+
+  <div class="page-container">
+
+    <!-- PAGE 1: Welcome Greeting -->
+    <div id="page-home" class="page active">
+      <div class="glass-card">
+        <h1>Happy Birthday Sandani! 🎉</h1>
+        <p>Happy Birthday, my friend! 🎉✨ 
+          I sincerely wish that everything you do and everything you say will be successful, and that you’ll be able to make all your dreams come true no matter what. 
+          🫂🤍 I also hope you’ll always stay happy and keep smiling. And I really hope this friendship will last forever. 
+          You’re truly one of the best friends I’ve ever met. 🫂❤️ Once again, Happy Birthday! 🎉✨ Have an amazing day! 🥳🎂!</p>
+        <button class="btn" onclick="navigateTo('page-gallery')">Explore Memories ➔</button>
+      </div>
+    </div>
+
+    <!-- PAGE 2: Memory Gallery -->
+    <div id="page-gallery" class="page">
+      <div class="glass-card">
+        <h1>Memory Lane 📸</h1>
+        <p>Here are a few highlights of the amazing moments shared together!</p>
+        <div class="memory-grid">
+          <div class="memory-card">
+            <div class="photo-placeholder">
+              <img src="images/best-moments.jpeg" alt="Best moments together" loading="lazy">
+            </div>
+            <h3>Best Moments</h3>
+            <p class="memory-text">Laughs and unforgettable adventures shared together.</p>
+          </div>
+          <div class="memory-card">
+            <div class="photo-placeholder">
+              <img src="images/big-milestones.png" alt="Big milestones celebrated" loading="lazy">
+            </div>
+            <h3>Big Milestones</h3>
+            <p class="memory-text">Celebrating every victory and goal achieved this year.</p>
+          </div>
+          <div class="memory-card">
+            <div class="photo-placeholder">
+              <img src="images/good-times.jpeg" alt="Good times shared" loading="lazy">
+            </div>
+            <h3>Good Times</h3>
+            <p class="memory-text">Here's to making countless more bright memories!</p>
+          </div>
+        </div>
+        <button class="btn btn-spaced" onclick="navigateTo('page-cake')">Blow the Candles 🎂</button>
+      </div>
+    </div>
+
+    <!-- PAGE 3: Interactive 3D Chocolate Cake -> Teddy -> Smooth 3D Heart Mesh -->
+    <div id="page-cake" class="page">
+      <div class="glass-card">
+        <h1 id="page-title">Blow Out the Candle! 🎂</h1>
+        <p id="page-subtitle">Click on the chocolate cake to make a wish and unlock a magical surprise!</p>
+        <div class="cake-box" id="cake" onclick="handleInteractiveClick()">
+          <canvas id="cakeCanvas"></canvas>
+        </div>
+        <h2 id="wish-status">Tap the chocolate cake to blow the candles!</h2>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
